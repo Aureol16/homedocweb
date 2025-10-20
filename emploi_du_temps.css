@@ -1,0 +1,341 @@
+/* emploi_du_temps.css */
+
+/* Utilisation des variables CSS définies */
+:root {
+    /* Couleurs */
+    --primary: #4a6fa5;
+    --primary-dark: #166088;
+    --secondary: #4fc3f7;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    --info: #17a2b8;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --gray: #6c757d;
+    --gray-light: #e9ecef;
+
+    /* Espacements */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+    /* Bordures */
+    --border-radius: 0.5rem;
+    --border-color: #dee2e6;
+}
+
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+/* Layout principal */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: var(--space-lg) 0;
+    position: fixed;
+    height: 100vh;
+}
+
+.profile-summary {
+    text-align: center;
+    padding: 0 var(--space-md) var(--space-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--space-md);
+}
+
+.profile-icon-container {
+    margin-bottom: var(--space-md);
+}
+
+.profile-icon {
+    font-size: 50px; /* Augmentez la taille de l'icône */
+    color: rgb(247, 247, 247);
+}
+
+.profile-summary h3 {
+    font-size: 18px;
+    margin-bottom: var(--space-xs);
+}
+
+.profile-summary p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav li {
+    margin-bottom: var(--space-xs);
+}
+
+.main-nav a {
+    display: flex;
+    align-items: center;
+    padding: var(--space-sm) var(--space-lg);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.main-nav a:hover, .main-nav li.active a {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-left: calc(var(--space-lg) + 5px);
+}
+
+.main-nav a i {
+    margin-right: var(--space-sm);
+    width: 24px;
+    text-align: center;
+}
+
+
+/* Contenu principal */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: var(--space-lg);
+}
+
+/* Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-header h1 {
+    font-size: 36px;
+    color: var(--primary-dark);
+    text-align: left; /* Aligne le texte à gauche */
+    margin: 0; /* Supprime les marges par défaut */
+    flex: none; /* Empêche le titre de s'étendre */
+}
+
+.page-header h1 i {
+    margin-right: var(--space-sm);
+}
+
+/* Calendrier mini */
+.calendar-mini {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: var(--space-md);
+    width: 300px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: var(--gray);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.calendar-header span {
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: var(--space-sm);
+    font-weight: bold;
+    color: var(--gray);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--space-xs);
+}
+
+.calendar-days span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.calendar-days span.other-month {
+    color: var(--gray-light);
+    cursor: default;
+}
+
+.calendar-days span.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.calendar-days span.has-consultation {
+    background-color: var(--warning);
+    color: white;
+}
+
+/* Section de contenu */
+.content-section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.section-header h2 {
+    font-size: 24px;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+/* État vide */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
+    color: var(--gray);
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: var(--space-md);
+}
+
+/* Grille des consultations */
+.consultations-grid {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.consultation-card {
+    background-color: var(--gray-light);
+    border-radius: var(--border-radius);
+    padding: var(--space-md);
+    display: flex;
+    position: relative;
+    border-left: 4px solid var(--primary);
+}
+
+.consultation-card.urgent {
+    border-left-color: var(--danger);
+}
+
+.consultation-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: var(--space-md);
+}
+
+.consultation-time .heure {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+.consultation-time .duree {
+    font-size: 12px;
+    color: var(--gray);
+}
+
+.patient-info {
+    display: flex;
+    flex: 1;
+}
+
+.patient-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--space-md);
+    color: white;
+    font-size: 20px;
+}
+
+.patient-details {
+    flex: 1;
+}
+
+.patient-details h3 {
+    font-size: 16px;
+    margin-bottom: var(--space-xs);
+    color: var(--primary-dark);
+}
+
+.patient-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    font-size: 12px;
+    color: var(--gray);
+}
+
+.patient-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.patient-meta span i {
+    margin-right: var(--space-xs);
+}
+
+.urgence-badge {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    background-color: var(--danger);
+    color: white;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.urgence-badge i {
+    margin-right: var(--space-xs);
+}

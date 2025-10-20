@@ -1,0 +1,282 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Layout principal */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px; /* Ajuster selon la largeur de la sidebar */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.main-header h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+}
+
+.main-header h1 i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+/* Boutons et actions */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    background: #3498db;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+    margin-right: 15px;
+}
+
+.back-btn:hover {
+    background: #2980b9;
+}
+
+.back-btn i {
+    margin-right: 5px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* Menu profil */
+.profile-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.profile-btn:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.profile-icon {
+    font-size: 20px;
+    margin-right: 8px;
+    color: #3498db;
+}
+
+.profile-name {
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+/* Cartes et tableaux */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.consultations-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.consultations-table thead {
+    background: #f8f9fa;
+}
+
+.consultations-table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 500;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.consultations-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.consultations-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Badges de statut */
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status-badge.en-attente {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.status-badge.validee {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-badge.annulee {
+    background: #ffebee;
+    color: #c62828;
+}
+
+/* Boutons */
+.btn {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-sm {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.btn-success {
+    background: #2ecc71;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #27ae60;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
+}
+
+/* Alertes et messages */
+.alert {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.alert i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.alert-info {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.alert-success {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.alert-warning {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.alert-danger {
+    background: #ffebee;
+    color: #c62828;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding-top: 60px;
+    }
+
+    .consultations-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .back-btn {
+        margin-right: 0;
+    }
+}

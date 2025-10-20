@@ -1,0 +1,254 @@
+/* Variables CSS */
+:root {
+    /* Couleurs */
+    --primary: #4a6fa5;
+    --primary-dark: #166088;
+    --secondary: #4fc3f7;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    --info: #17a2b8;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --gray: #6c757d;
+    --gray-light: #e9ecef;
+
+    /* Espacements */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+    /* Bordures */
+    --border-radius: 0.5rem;
+    --border-color: #dee2e6;
+}
+
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+/* Layout principal */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: var(--space-lg) 0;
+    position: fixed;
+    height: 100vh;
+}
+
+.profile-summary {
+    text-align: center;
+    padding: 0 var(--space-md) var(--space-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--space-md);
+}
+
+.profile-icon-container {
+    margin-bottom: var(--space-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-icon {
+    font-size: 50px;
+    color: white;
+}
+
+.profile-summary h3 {
+    font-size: 18px;
+    margin-bottom: var(--space-xs);
+}
+
+.profile-summary p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav li {
+    margin-bottom: var(--space-xs);
+}
+
+.main-nav a {
+    display: flex;
+    align-items: center;
+    padding: var(--space-sm) var(--space-lg);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.main-nav a:hover, .main-nav li.active a {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-left: calc(var(--space-lg) + 5px);
+}
+
+.main-nav a i {
+    margin-right: var(--space-sm);
+    width: 24px;
+    text-align: center;
+}
+
+/* Contenu principal */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: var(--space-lg);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    font-size: 24px;
+    color: var(--primary-dark);
+}
+
+header h1 i {
+    margin-right: var(--space-sm);
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: var(--space-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    width: 200px;
+}
+
+.search-box button {
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+}
+
+/* Consultations Grid */
+.consultations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-md);
+}
+
+/* Consultation Card */
+.consultation-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: var(--space-md);
+}
+
+.consultation-header {
+    margin-bottom: var(--space-md);
+}
+
+.consultation-header h3 {
+    font-size: 18px;
+    margin-bottom: var(--space-xs);
+}
+
+.consultation-date {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--gray);
+}
+
+.consultation-details {
+    margin-bottom: var(--space-md);
+}
+
+.consultation-details p {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+    color: var(--gray);
+}
+
+.urgence-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background-color: var(--danger);
+    color: white;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius);
+    font-size: 12px;
+}
+
+/* Boutons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xs) var(--space-md);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary);
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* État vide */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
+    color: var(--gray);
+}
+
+.empty-state img {
+    width: 150px;
+    margin-bottom: var(--space-md);
+}
+
+.empty-state h2 {
+    margin-bottom: var(--space-xs);
+}

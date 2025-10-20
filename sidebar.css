@@ -1,0 +1,159 @@
+/* Style général du sidebar - Version modernisée */
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+    color: #fff;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Animation au survol du sidebar */
+.sidebar:hover {
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Style du profil */
+.profile-summary {
+    text-align: center;
+    padding: 20px 10px;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0 20px 20px 0;
+    margin-left: -10px;
+    transition: all 0.3s ease;
+}
+
+.profile-summary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.profile-summary i {
+    font-size: 60px;
+    color: #fff;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.profile-summary:hover i {
+    transform: scale(1.05);
+}
+
+.profile-summary h3 {
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.profile-summary p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Style pour la navigation */
+.main-nav {
+    list-style-type: none;
+    padding: 0 15px;
+    margin: 0;
+}
+
+.main-nav li {
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.main-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.main-nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* Li active */
+.main-nav li.active a {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-weight: 600;
+    border-left: 4px solid #fff;
+}
+
+.main-nav li a i {
+    margin-right: 12px;
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.main-nav li a:hover i {
+    transform: scale(1.15);
+}
+
+/* Badge pour notifications */
+.notification-badge {
+    background-color: #ff4757;
+    color: white;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-left: auto;
+}
+
+/* Footer du sidebar */
+.sidebar-footer {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.sidebar-footer:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #fff;
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px;
+        overflow: hidden;
+    }
+    
+    .profile-summary, .sidebar-footer, .main-nav li span {
+        display: none;
+    }
+    
+    .main-nav li a {
+        justify-content: center;
+        padding: 15px 0;
+    }
+    
+    .main-nav li a i {
+        margin-right: 0;
+        font-size: 20px;
+    }
+}
