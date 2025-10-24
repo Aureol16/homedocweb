@@ -342,7 +342,7 @@ try {
                 </div>
                 
                 <div class="form-group">
-                    <label for="popup_patient_email">Email du patient</label>
+                    <label for="popup_patient_email">Email du patient(e)</label>
                     <input type="email" id="popup_patient_email" name="patient_email" required>
                 </div>
                 
